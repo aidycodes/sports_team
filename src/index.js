@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import AppRoutes from './routes';
+import './Resources/css/app.css'
+import {getAuth, onAuthStateChanged } from "firebase/auth";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+const App = (props) => {
+  return (
+        <AppRoutes {...props} />
+  )
+}
+
+const auth = getAuth()
+
+
+onAuthStateChanged(auth,(user) => {
+        ReactDOM.render(
+  <App user={user}/>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+})
