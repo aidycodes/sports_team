@@ -15,6 +15,7 @@ import AddEditPlayers from './Components/Admin/players/addEditPlayers';
 import TheTeam from './Components/TheTeam';
 import AdminMatches from './Components/Admin/matches';
 import AddEditMatch from './Components/Admin/matches/AddEditMatch'
+import NotFound from './Components/notfound/NotFound';
 
 import MatchDisplay from './Components/matchDisplay';
 
@@ -44,10 +45,12 @@ const AppRoutes = ( { user } ) => {
            <Route path="/admin_matches" exact element={<AdminMatchesComp/>}/>
          
           <Route path="/the_team" extact element={<TheTeam />}/>
-          <Route path="/match_display" extact element={<MatchDisplay />}/>
+          <Route path="/matches" extact element={<MatchDisplay />}/>
           <Route path="/sign_in" exact element={<SignIn user={user}/>}/>
          
           <Route path="/" exact element={<Home/>}/>
+
+          <Route path="*" exact element={<NotFound/>}/>
      
         </Routes >
         <ToastContainer  theme="colored"

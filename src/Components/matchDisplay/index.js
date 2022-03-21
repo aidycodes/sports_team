@@ -98,7 +98,6 @@ console.log('hiii', state.playedFilter)
     }
     }
 
-console.log(state.filterMatches, state.resultFilter, state.playedFilter)
 
   return (
     <>{matches ?

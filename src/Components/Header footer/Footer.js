@@ -10,7 +10,7 @@ const Footer = () => {
 
       </div>
       <div className="footer_desc1">
-        Random Poo 2022 All Rights Reserved
+        Random Footer 2022 All Rights Reserved
       </div>
     </footer>
 
